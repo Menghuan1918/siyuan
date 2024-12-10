@@ -101,7 +101,6 @@ export class Wnd {
                     window.siyuan.menus.menu.remove();
                     event.stopPropagation();
                     event.preventDefault();
-                    const activeElement = document.activeElement;
                     const pasteHandler = (e: ClipboardEvent) => {
                         e.preventDefault();
                         e.stopPropagation();
@@ -117,11 +116,6 @@ export class Wnd {
                             capture: true
                         });
                     }, 250);
-
-                    // 保持原有焦点
-                    if (activeElement instanceof HTMLElement) {
-                        activeElement.focus();
-                    }
                     break;
                 }
                 target = target.parentElement;
